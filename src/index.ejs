@@ -9,15 +9,57 @@
     <link rel="stylesheet" type="text/css" href="<%- path %>css/main.min.css">
   </head>
   <body>
-      <% include partials/header %>
-      <p>Node JS</p>
-      <p>EJS</p>
-      <p>SASS</p>
-      <p>Gulp</p>
-      <p>BrowserSync</p>
-      <p>ES6/Babel</p>
-      <p>Karma / Mocha / Chai</p>
-      <script src="<%- path %>js/modules/jquery.min.js"></script>
-      <script src="<%- script %>" charset="utf-8"></script>
+    <form>
+      <div class="kn-form-field">
+        <label for="">Project Type?</label>
+        <div class="kn-form-selectWrap">
+          <select
+            class="kn-form-select"
+            id="project-type">
+          </select>
+        </div>
+      </div>
+      <div class="kn-form-field">
+        <label for="">Deliverable?</label>
+        <div class="kn-form-selectWrap">
+          <select
+            class="kn-form-select"
+            id="deliverables">
+          </select>
+        </div>
+      </div>
+      <div class="kn-form-field">
+        <label for="">Business Unit or Department?</label>
+        <div class="kn-form-selectWrap">
+          <select class="kn-form-select">
+            <option>Content</option>
+            <option>...</option>
+          </select>
+        </div>
+      </div>
+      <div class="kn-form-field">
+        <label for="">Industry Vertical? (not always needed)</label>
+        <div class="kn-form-selectWrap">
+          <select class="kn-form-select">
+            <option>Content</option>
+            <option>...</option>
+          </select>
+        </div>
+      </div>
+      <div class="kn-form-field">
+        <label for="">Asset Title?</label>
+        <div class="kn-form-selectWrap">
+          <input type="text" />
+        </div>
+      </div>
+      <div class="kn-form-field">
+        <label for="">Kapost Number?</label>
+        <div class="kn-form-selectWrap">
+          <input type="text" />
+        </div>
+      </div>
+    </form>
+    <script src="<%- path %>js/modules/jquery.min.js"></script>
+    <script src="<%- script %>" charset="utf-8"></script>
   </body>
 </html>

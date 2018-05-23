@@ -1,7 +1,7 @@
 {
-  "name": "lean-starter",
+  "name": "name-builder",
   "version": "1.0.0",
-  "description": "Lean front end biolerplate. Using EJS, node, gulp, eslint etc.",
+  "description": "A builder for building names",
   "main": "server.js",
   "scripts": {
     "start": "gulp",
@@ -19,7 +19,7 @@
     "chai"
   ],
   "author": "Roger Avalos",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "ejs": "^2.5.6",
     "jquery": "^3.2.1",
