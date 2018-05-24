@@ -130,5 +130,161 @@
         "Other"
       ]
     }
+  ],
+  "businessUnit": [
+    {
+      "name": "AWS",
+      "value": "AWS"
+    },
+    {
+      "name": "Azure",
+      "value": "AZU"
+    },
+    {
+      "name": "Brand",
+      "value": "BRA"
+    },
+    {
+      "name": "Cloud Office",
+      "value": "CLO"
+    },
+    {
+      "name": "Comms",
+      "value": "COM"
+    },
+    {
+      "name": "Data Services",
+      "value": "DAT"
+    },
+    {
+      "name": "Digital Transformation",
+      "value": "DTR"
+    },
+    {
+      "name": "Dedicated",
+      "value": "DED"
+    },
+    {
+      "name": "Events",
+      "value": "EVT"
+    },
+    {
+      "name": "Google",
+      "value": "GOO"
+    },
+    {
+      "name": "Legal",
+      "value": "LEG"
+    },
+    {
+      "name": "IT Transformation",
+      "value": "ITT"
+    },
+    {
+      "name": "Marketing",
+      "value": "MAR"
+    },
+    {
+      "name": "Microsoft",
+      "value": "MST"
+    },
+    {
+      "name": "Multi-Cloud",
+      "value": "MLT"
+    },
+    {
+      "name": "OpenStack",
+      "value": "OPN"
+    },
+    {
+      "name": "Partner",
+      "value": "PAR"
+    },
+    {
+      "name": "Private Cloud",
+      "value": "PRI"
+    },
+    {
+      "name": "Professional Services",
+      "value": "PRO"
+    },
+    {
+      "name": "Public Cloud",
+      "value": "PUB"
+    },
+    {
+      "name": "Application Services",
+      "value": "RAS"
+    },
+    {
+      "name": "Sales",
+      "value": "SAL"
+    },
+    {
+      "name": "Security",
+      "value": "SEC"
+    },
+    {
+      "name": "Solve",
+      "value": "SOL"
+    },
+    {
+      "name": "VMware",
+      "value": "VMW"
+    }
+  ],
+  "industryVertical": [
+    {
+      "name": "Retail / Ecommerce",
+      "value": "ECM"
+    },
+    {
+      "name": "Education",
+      "value": "EDU"
+    },
+    {
+      "name": "Financial",
+      "value": "FIN"
+    },
+    {
+      "name": "Gaming",
+      "value": "GAM"
+    },
+    {
+      "name": "Government",
+      "value": "GOV"
+    },
+    {
+      "name": "Healthcare",
+      "value": "HTH"
+    },
+    {
+      "name": "Manufacturing",
+      "value": "MAN"
+    },
+    {
+      "name": "Media",
+      "value": "MED"
+    },
+    {
+      "name": "Oil & Gas / Energy",
+      "value": "NRG"
+    },
+    {
+      "name": "Professional Services",
+      "value": "PRO"
+    },
+    {
+      "name": "SLED (State, Local, Education)",
+      "value": "SLD"
+    },
+    {
+      "name": "Technology & Apps",
+      "value": "TCH"
+    },
+    {
+      "name": "Telecom",
+      "value": "TEL"
+    }
   ]
 }

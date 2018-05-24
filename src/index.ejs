@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="<%- path %>css/main.min.css">
   </head>
   <body>
-    <form>
+    <form class="kn-form">
       <div class="kn-form-field">
         <label for="">Project Type?</label>
         <div class="kn-form-selectWrap">
@@ -31,34 +31,40 @@
       <div class="kn-form-field">
         <label for="">Business Unit or Department?</label>
         <div class="kn-form-selectWrap">
-          <select class="kn-form-select">
-            <option>Content</option>
-            <option>...</option>
+          <select
+            class="kn-form-select"
+            id="business-unit">
           </select>
         </div>
       </div>
       <div class="kn-form-field">
         <label for="">Industry Vertical? (not always needed)</label>
         <div class="kn-form-selectWrap">
-          <select class="kn-form-select">
-            <option>Content</option>
-            <option>...</option>
+          <select
+            class="kn-form-select"
+            id="industry-vertical">
           </select>
         </div>
       </div>
       <div class="kn-form-field">
         <label for="">Asset Title?</label>
         <div class="kn-form-selectWrap">
-          <input type="text" />
+          <input class="km-form-input" type="text" id="asset-title" />
         </div>
       </div>
       <div class="kn-form-field">
         <label for="">Kapost Number?</label>
         <div class="kn-form-selectWrap">
-          <input type="text" />
+          <input class="km-form-input" type="text" id="kapost-number" />
         </div>
       </div>
+      <div class="kn-form-field">
+        <button class="kn-create-btn">Create Name</button>
+        <button class="kn-reset-btn" type="reset">Reset</button>
+      </div>
     </form>
+    <!-- created output -->
+    <span id="final-name-output"></span>
     <script src="<%- path %>js/modules/jquery.min.js"></script>
     <script src="<%- script %>" charset="utf-8"></script>
   </body>
