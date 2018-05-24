@@ -11,51 +11,67 @@
   <body>
     <form class="kn-form">
       <div class="kn-form-field">
-        <label for="">Project Type?</label>
+        <label class="kn-form-label" for="project-type">Project Type?</label>
         <div class="kn-form-selectWrap">
+          <div class="arrow-down"></div>
           <select
+            data-validate="required"
             class="kn-form-select"
             id="project-type">
           </select>
         </div>
       </div>
       <div class="kn-form-field">
-        <label for="">Deliverable?</label>
+        <label class="kn-form-label" for="deliverables">Deliverable?</label>
         <div class="kn-form-selectWrap">
+          <div class="arrow-down"></div>
           <select
+            data-validate="required"
             class="kn-form-select"
             id="deliverables">
           </select>
         </div>
       </div>
       <div class="kn-form-field">
-        <label for="">Business Unit or Department?</label>
+        <label class="kn-form-label" for="business-unit">Business Unit or Department?</label>
         <div class="kn-form-selectWrap">
+          <div class="arrow-down"></div>
           <select
+            data-validate="required"
             class="kn-form-select"
             id="business-unit">
           </select>
         </div>
       </div>
       <div class="kn-form-field">
-        <label for="">Industry Vertical? (not always needed)</label>
+        <label class="kn-form-label" for="industry-vertical">Industry Vertical? (not always needed)</label>
         <div class="kn-form-selectWrap">
+          <div class="arrow-down"></div>
           <select
+            data-validate="required"
             class="kn-form-select"
             id="industry-vertical">
           </select>
         </div>
       </div>
       <div class="kn-form-field">
-        <label for="">Asset Title?</label>
+        <label class="kn-form-label" for="asset-title">Asset Title?</label>
         <div class="kn-form-selectWrap">
-          <input class="km-form-input" type="text" id="asset-title" />
+          <input
+            data-validate="required"
+            class="km-form-input"
+            type="text"
+            id="asset-title" />
         </div>
       </div>
       <div class="kn-form-field">
-        <label for="">Kapost Number?</label>
+        <label class="kn-form-label" for="kapost-number">Kapost Number?</label>
         <div class="kn-form-selectWrap">
-          <input class="km-form-input" type="text" id="kapost-number" />
+          <input
+            data-validate="required"
+            class="km-form-input"
+            type="text"
+            id="kapost-number" />
         </div>
       </div>
       <div class="kn-form-field">
@@ -64,8 +80,13 @@
       </div>
     </form>
     <!-- created output -->
-    <span id="final-name-output"></span>
+    <div class="output-container">
+      <label class="kn-form-label">Filename</label>
+      <a href="#" class="kn-copy-name">Copy</a>
+      <span id="final-name-output"></span>
+    </div>
     <script src="<%- path %>js/modules/jquery.min.js"></script>
+    <script src="<%- path %>js/modules/clipboard-polyfill.js"></script>
     <script src="<%- script %>" charset="utf-8"></script>
   </body>
 </html>

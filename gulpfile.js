@@ -37,6 +37,10 @@ const buildNodeModules = function buildIcons() {
       module: './node_modules/jquery/dist/jquery.min.js',
       dest: './dist/js/modules/',
     },
+    {
+      module: './node_modules/clipboard-polyfill/build/clipboard-polyfill.js',
+      dest: './dist/js/modules/',
+    },
   ];
   fse.ensureDir('./dist/js/modules')
     .then(() => {

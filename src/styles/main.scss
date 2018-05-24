@@ -1,8 +1,11 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
 $baseColor: #eee;
 $fadeBase: rgba($baseColor, 0.2);
 $darkenBase: darken($baseColor, 20%);
-$bodyFont: 'Roboto', sans-serif;
+$bodyFont: 'Source Sans Pro', sans-serif;
+$white: #fff;
+$black: #000;
+$error: #ff3838;
 $desktop: 'only screen and (min-width : 993px)';
 $tablet: 'only screen and (min-width:601px) and (max-width:992px)';
 $mobile: 'only screen and (min-width:50px) and (max-width:600px)';
@@ -12,6 +15,8 @@ $mobile: 'only screen and (min-width:50px) and (max-width:600px)';
 }
 
 body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   background-color: $baseColor;
   color: #596167;
   font-family: $bodyFont;
@@ -32,14 +37,167 @@ body {
  }
 }
 
+.kn-form {
+  background-color: $white;
+  box-shadow: 0 1px 3px rgba($black, .20);
+  margin: 0 auto 40px;
+  width: 60%;
+}
+
+.kn-form-field {
+  padding: 10px 20px;
+  margin-bottom: 15px;
+}
+
+.kn-form-label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.arrow-down {
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid rgba($black, .40);
+  height: 0;
+  width: 0;
+}
+
+.kn-form-selectWrap {
+  position: relative;
+
+  .arrow-down {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+  }
+}
+
+.kn-form-select {
+  appearance: none;
+  
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.km-form-input, .kn-form-select {
+  background-color: $white;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  color: rgba($black, .70);
+  font-size: 12pt;
+  margin-bottom: 5px;
+  padding: 8px;
+  width: 100%;
+  transition-duration: .2s;
+  
+  &:focus {
+    border: 1px solid rgba($black, .55);
+    outline: 0;
+  }
+}
+
+// input classes
+.kn-field-error {
+  border: 1px solid $error;
+
+  &:focus {
+    border: 1px solid $error;
+  }
+}
+
+// span error message
+.kn-form-error {
+  color: $error;
+  display: block;
+}
+
+.kn-create-btn, .kn-reset-btn {
+  border: 0;
+  border-radius: 0;
+  font-size: 13pt;
+  padding: 12px 20px;
+  transition-duration: .2s;
+  
+  &:hover {
+    cursor: pointer;
+  }
+  
+  &:focus {
+    outline: 0;
+  }
+}
+
+.kn-create-btn {
+  background-color: #2cb663;
+  color: $white;
+  
+  &:hover {
+    background-color: #2ba15a;
+  }
+}
+
+.kn-reset-btn {
+  background-color: rgba($black, .1);
+  color: rgba($black, .6);
+  
+  &:hover {
+    background-color: rgba($black, .15);
+  }
+}
+
+.output-container {
+  margin: 0 auto;
+  width: 60%;
+}
+
+.kn-copy-name {
+  color: #3e9ad4;
+  display: none;
+  float: right;
+  text-decoration: none;
+  transition-duration: .2s;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.file-built {
+  .kn-copy-name {
+    display: inline-block;
+  }
+}
+
+#final-name-output {
+  background-color: $white;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  color: rgba($black, .70);
+  display: block;
+  font-size: 16pt;
+  height: 45px;
+  padding: 8px;
+}
+
 @media #{$mobile} {
   // mobile rules
+  .kn-form {
+    width: 80%;
+  }
+  
+  .output-container {
+    width: 80%;
+  }
 }
 
 @media #{$tablet} {
  // tablet rules
-}
+ .kn-form {
+   width: 80%;
+ }
 
-@media #{$desktop} {
-  // desktop ru
+ .output-container {
+   width: 80%;
+ }
 }
