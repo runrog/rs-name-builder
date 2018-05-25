@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <% var env, path = '', script = 'js/app.min.js';%>
-    <% if (env === 'dev') { path = 'dist/'; script = 'dist/js/app.js'; } %>
+    
+    
     <meta charset="utf-8">
     <title>Node + EJS + SCSS boilerplate</title>
     <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="<%- path %>css/main.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.min.css">
   </head>
   <body>
     <h4 class="kn-header">Name Builder</h4>
@@ -86,8 +86,8 @@
       <a href="#" class="kn-copy-name"></a>
       <span id="final-name-output"></span>
     </div>
-    <script src="<%- path %>js/modules/jquery.min.js"></script>
-    <script src="<%- path %>js/modules/clipboard-polyfill.js"></script>
-    <script src="<%- script %>" charset="utf-8"></script>
+    <script src="js/modules/jquery.min.js"></script>
+    <script src="js/modules/clipboard-polyfill.js"></script>
+    <script src="js/app.min.js" charset="utf-8"></script>
   </body>
 </html>

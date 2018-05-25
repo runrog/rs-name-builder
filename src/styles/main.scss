@@ -37,6 +37,13 @@ body {
  }
 }
 
+.kn-header {
+  display: block;
+  font-size: 18pt;
+  margin: 0 auto 15px;
+  width: 60%;
+}
+
 .kn-form {
   background-color: $white;
   box-shadow: 0 1px 3px rgba($black, .20);
@@ -74,7 +81,7 @@ body {
 
 .kn-form-select {
   appearance: none;
-  
+
   &:hover {
     cursor: pointer;
   }
@@ -90,7 +97,7 @@ body {
   padding: 8px;
   width: 100%;
   transition-duration: .2s;
-  
+
   &:focus {
     border: 1px solid rgba($black, .55);
     outline: 0;
@@ -118,11 +125,11 @@ body {
   font-size: 13pt;
   padding: 12px 20px;
   transition-duration: .2s;
-  
+
   &:hover {
     cursor: pointer;
   }
-  
+
   &:focus {
     outline: 0;
   }
@@ -131,7 +138,7 @@ body {
 .kn-create-btn {
   background-color: #2cb663;
   color: $white;
-  
+
   &:hover {
     background-color: #2ba15a;
   }
@@ -140,14 +147,14 @@ body {
 .kn-reset-btn {
   background-color: rgba($black, .1);
   color: rgba($black, .6);
-  
+
   &:hover {
     background-color: rgba($black, .15);
   }
 }
 
 .output-container {
-  margin: 0 auto;
+  margin: 0 auto 100px;
   width: 60%;
 }
 
@@ -157,9 +164,21 @@ body {
   float: right;
   text-decoration: none;
   transition-duration: .2s;
-  
+
+  &:after {
+    content: 'Copy';
+  }
+
   &:hover {
     text-decoration: underline;
+  }
+}
+
+.kn-copied {
+  color: #2ba15a;
+
+  &:after {
+    content: 'Copied!';
   }
 }
 
@@ -178,14 +197,24 @@ body {
   font-size: 16pt;
   min-height: 45px;
   padding: 8px;
+  transition-duration: .2s;
+}
+
+#final-name-output.kn-copied-output {
+  background-color: #ddffe8;
+  border: 1px solid #2ba15a;
 }
 
 @media #{$mobile} {
   // mobile rules
+  .kn-header {
+    width: 80%;
+  }
+
   .kn-form {
     width: 80%;
   }
-  
+
   .output-container {
     width: 80%;
   }
@@ -193,6 +222,10 @@ body {
 
 @media #{$tablet} {
  // tablet rules
+ .kn-header {
+   width: 80%;
+ }
+
  .kn-form {
    width: 80%;
  }

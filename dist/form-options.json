@@ -1,0 +1,290 @@
+{
+  "projectTypes": [
+    {
+      "type": "Content",
+      "deliverables": [
+        "Anonymous Use Case",
+        "Check List",
+        "Corporate Brochure",
+        "Customer Case Study",
+        "Customer Use Case",
+        "Sales Presentation",
+        "Data Sheet",
+        "Ebook",
+        "FAQ",
+        "Infographic",
+        "Proposal/Sales Offer",
+        "Runbook",
+        "Battle Card",
+        "Sales Presentation/Training",
+        "Sales Questionnaire",
+        "Service/Solution Overview",
+        "Solve Presentation",
+        "Spheres of Support",
+        "Survery",
+        "Tech Doc",
+        "Training Materials (External)",
+        "Webinar Presentation",
+        "Other"
+      ]
+    },
+    {
+      "type": "Collateral",
+      "deliverables": [
+        "Article",
+        "Battle Card",
+        "Brochure",
+        "Case Study",
+        "Check List",
+        "Data Sheet",
+        "Ebook",
+        "FAQ",
+        "Infographic",
+        "Monthly Account Review",
+        "Presentation",
+        "Proposal",
+        "Questionnaire",
+        "Report",
+        "Service Overview",
+        "Spheres of Support",
+        "Take Away",
+        "White Paper",
+        "Other"
+      ]
+    },
+    {
+      "type": "Event",
+      "deliverables": [
+        "Agenda",
+        "Bag Insert",
+        "Booth Design",
+        "Booth Loop",
+        "Chair Drop",
+        "Digital Ad",
+        "Easel Sign",
+        "Giveaway",
+        "Handout",
+        "Print Ad",
+        "Pull Up/Pop Up Sign",
+        "Shirt",
+        "Signage",
+        "Sponsorship Design",
+        "Sticker",
+        "Survey",
+        "Table Cloth",
+        "Other"
+      ]
+    },
+    {
+      "type": "Ad",
+      "deliverables": [
+        "Print Ad",
+        "Online Ad",
+        "Social Ad"
+      ]
+    },
+    {
+      "type": "Image",
+      "deliverables": [
+        "Blog Image",
+        "Diagram",
+        "Email Image",
+        "Generic",
+        "Icon",
+        "Landing Page Image",
+        "Logo",
+        "Photo",
+        "Thumbnail",
+        "Other"
+      ]
+    },
+    {
+      "type": "Presentation",
+      "deliverables": [
+        "Presentation",
+        "Template",
+        "Other"
+      ]
+    },
+    {
+      "type": "Video",
+      "deliverables": [
+        "Brand",
+        "Thought Leadership",
+        "Customer Stories",
+        "Events",
+        "Solutions",
+        "Case Studies",
+        "Product Tours",
+        "Webinars",
+        "Topic Deep Dives",
+        "Product Walkthroughs",
+        "Integration How-tos",
+        "Other"
+      ]
+    },
+    {
+      "type": "Apparel",
+      "deliverables": [
+        "Shirt",
+        "Other"
+      ]
+    }
+  ],
+  "businessUnit": [
+    {
+      "name": "AWS",
+      "value": "AWS"
+    },
+    {
+      "name": "Azure",
+      "value": "AZU"
+    },
+    {
+      "name": "Brand",
+      "value": "BRA"
+    },
+    {
+      "name": "Cloud Office",
+      "value": "CLO"
+    },
+    {
+      "name": "Comms",
+      "value": "COM"
+    },
+    {
+      "name": "Data Services",
+      "value": "DAT"
+    },
+    {
+      "name": "Digital Transformation",
+      "value": "DTR"
+    },
+    {
+      "name": "Dedicated",
+      "value": "DED"
+    },
+    {
+      "name": "Events",
+      "value": "EVT"
+    },
+    {
+      "name": "Google",
+      "value": "GOO"
+    },
+    {
+      "name": "Legal",
+      "value": "LEG"
+    },
+    {
+      "name": "IT Transformation",
+      "value": "ITT"
+    },
+    {
+      "name": "Marketing",
+      "value": "MAR"
+    },
+    {
+      "name": "Microsoft",
+      "value": "MST"
+    },
+    {
+      "name": "Multi-Cloud",
+      "value": "MLT"
+    },
+    {
+      "name": "OpenStack",
+      "value": "OPN"
+    },
+    {
+      "name": "Partner",
+      "value": "PAR"
+    },
+    {
+      "name": "Private Cloud",
+      "value": "PRI"
+    },
+    {
+      "name": "Professional Services",
+      "value": "PRO"
+    },
+    {
+      "name": "Public Cloud",
+      "value": "PUB"
+    },
+    {
+      "name": "Application Services",
+      "value": "RAS"
+    },
+    {
+      "name": "Sales",
+      "value": "SAL"
+    },
+    {
+      "name": "Security",
+      "value": "SEC"
+    },
+    {
+      "name": "Solve",
+      "value": "SOL"
+    },
+    {
+      "name": "VMware",
+      "value": "VMW"
+    }
+  ],
+  "industryVertical": [
+    {
+      "name": "Retail / Ecommerce",
+      "value": "ECM"
+    },
+    {
+      "name": "Education",
+      "value": "EDU"
+    },
+    {
+      "name": "Financial",
+      "value": "FIN"
+    },
+    {
+      "name": "Gaming",
+      "value": "GAM"
+    },
+    {
+      "name": "Government",
+      "value": "GOV"
+    },
+    {
+      "name": "Healthcare",
+      "value": "HTH"
+    },
+    {
+      "name": "Manufacturing",
+      "value": "MAN"
+    },
+    {
+      "name": "Media",
+      "value": "MED"
+    },
+    {
+      "name": "Oil & Gas / Energy",
+      "value": "NRG"
+    },
+    {
+      "name": "Professional Services",
+      "value": "PRO"
+    },
+    {
+      "name": "SLED (State, Local, Education)",
+      "value": "SLD"
+    },
+    {
+      "name": "Technology & Apps",
+      "value": "TCH"
+    },
+    {
+      "name": "Telecom",
+      "value": "TEL"
+    }
+  ]
+}

@@ -168,6 +168,12 @@ const kapost = {
   copyFileName() {
     if (this.finalName) {
       clipboard.writeText(this.finalName);
+      this.selectors.copyBtn.addClass('kn-copied');
+      this.selectors.output.addClass('kn-copied-output');
+      setTimeout(() => {
+        this.selectors.copyBtn.removeClass('kn-copied');
+        this.selectors.output.removeClass('kn-copied-output');
+      }, 1500);
     }
   },
   init() {
