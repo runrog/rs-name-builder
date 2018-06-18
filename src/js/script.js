@@ -31,7 +31,7 @@ const kapost = {
     // setup project type select options
     const projectTypes = this.selectors.projectTypes;
     const deliverables = this.selectors.deliverables;
-    projectTypes.append('<option value="none">What kind of project?</option>');
+    projectTypes.append('<option value="">What kind of project?</option>');
     opts.projectTypes.forEach(o => projectTypes.append(`<option value="${o.type}">${o.type}</option>`));
     projectTypes.on('change', (e) => {
       const find = this.formData.projectTypes.find(o => o.type === e.target.value);
@@ -52,7 +52,7 @@ const kapost = {
 
     // setup business unit select options
     const businessUnit = this.selectors.businessUnit;
-    businessUnit.append('<option value="none">Who\'s this for?</option>');
+    businessUnit.append('<option value="">Who\'s this for?</option>');
     opts.businessUnit.forEach(o => businessUnit.append(`<option value="${o.value}">${o.name}</option>`));
     businessUnit.on('change', (e) => {
       this.output.prodCode = e.target.value;
@@ -61,7 +61,7 @@ const kapost = {
 
     // setup industry vertical select options
     const industryVertical = this.selectors.industryVertical;
-    industryVertical.append('<option value="none">Select</option>');
+    industryVertical.append('<option value="">Select</option>');
     opts.industryVertical.forEach(o => industryVertical.append(`<option value="${o.value}">${o.name}</option>`));
     industryVertical.on('change', (e) => {
       this.output.vertCode = e.target.value;
@@ -90,7 +90,7 @@ const kapost = {
     return str.replace(/\s/g, '-');
   },
   sanitizeTitle(str) {
-    return str.replace(/[^a-zA-Z0-9]/g, '-');
+    return str.replace(/[^a-zA-Z0-9]/g, '-').replace(/--/gi, '-');
   },
   sanitizeNumber(str) {
     return str.replace(/[^0-9]/g, '');
@@ -105,7 +105,9 @@ const kapost = {
   },
   buildName() {
     const o = this.output;
-    const string = `${o.company}-${o.contentType}-${o.docTitle}-${o.vertCode}-${o.prodCode}-${o.kapostNum}`;
+    const assetTitle = o.docTitle.replace(/-$/, '');
+    let string = `${o.company}-${o.contentType}-${assetTitle}-${o.vertCode}-${o.prodCode}-${o.kapostNum}`;
+    string = string.replace(/--/gi, '-');
     this.finalName = string;
     this.selectors.output.html(string);
     console.log(string);
@@ -138,8 +140,7 @@ const kapost = {
     let passed = true;
     const val = $item.val();
     const $errors = $item.next('span.kn-form-error');
-    if ((val === 'none' || !val || val.trim() === '') &&
-         $item.attr('data-validate') === 'required') {
+    if ((!val || val.trim() === '') && $item.attr('data-validate') === 'required') {
       // add errors
       passed = false;
       if (!$errors.length) {
@@ -154,11 +155,14 @@ const kapost = {
     return passed;
   },
   validateAll() {
-    let passed = true;
+    const notPassed = [];
     this.selectors.form.find('select, input').each(function vld() {
-      passed = kapost.validateItem($(this));
+      const passed = kapost.validateItem($(this));
+      if (!passed) {
+        notPassed.push($(this));
+      }
     });
-    if (passed) {
+    if (notPassed.length === 0) {
       this.selectors.outputContainer.addClass('file-built');
       this.buildName();
     } else {

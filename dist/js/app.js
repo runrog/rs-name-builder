@@ -35,7 +35,7 @@ var kapost = {
     // setup project type select options
     var projectTypes = this.selectors.projectTypes;
     var deliverables = this.selectors.deliverables;
-    projectTypes.append('<option value="none">What kind of project?</option>');
+    projectTypes.append('<option value="">What kind of project?</option>');
     opts.projectTypes.forEach(function (o) {
       return projectTypes.append('<option value="' + o.type + '">' + o.type + '</option>');
     });
@@ -62,7 +62,7 @@ var kapost = {
 
     // setup business unit select options
     var businessUnit = this.selectors.businessUnit;
-    businessUnit.append('<option value="none">Who\'s this for?</option>');
+    businessUnit.append('<option value="">Who\'s this for?</option>');
     opts.businessUnit.forEach(function (o) {
       return businessUnit.append('<option value="' + o.value + '">' + o.name + '</option>');
     });
@@ -73,7 +73,7 @@ var kapost = {
 
     // setup industry vertical select options
     var industryVertical = this.selectors.industryVertical;
-    industryVertical.append('<option value="none">Select</option>');
+    industryVertical.append('<option value="">Select</option>');
     opts.industryVertical.forEach(function (o) {
       return industryVertical.append('<option value="' + o.value + '">' + o.name + '</option>');
     });
@@ -104,7 +104,7 @@ var kapost = {
     return str.replace(/\s/g, '-');
   },
   sanitizeTitle: function sanitizeTitle(str) {
-    return str.replace(/[^a-zA-Z0-9]/g, '-');
+    return str.replace(/[^a-zA-Z0-9]/g, '-').replace(/--/gi, '-');
   },
   sanitizeNumber: function sanitizeNumber(str) {
     return str.replace(/[^0-9]/g, '');
@@ -121,7 +121,9 @@ var kapost = {
   },
   buildName: function buildName() {
     var o = this.output;
-    var string = o.company + '-' + o.contentType + '-' + o.docTitle + '-' + o.vertCode + '-' + o.prodCode + '-' + o.kapostNum;
+    var assetTitle = o.docTitle.replace(/-$/, '');
+    var string = o.company + '-' + o.contentType + '-' + assetTitle + '-' + o.vertCode + '-' + o.prodCode + '-' + o.kapostNum;
+    string = string.replace(/--/gi, '-');
     this.finalName = string;
     this.selectors.output.html(string);
     console.log(string);
@@ -154,7 +156,7 @@ var kapost = {
     var passed = true;
     var val = $item.val();
     var $errors = $item.next('span.kn-form-error');
-    if ((val === 'none' || !val || val.trim() === '') && $item.attr('data-validate') === 'required') {
+    if ((!val || val.trim() === '') && $item.attr('data-validate') === 'required') {
       // add errors
       passed = false;
       if (!$errors.length) {
@@ -169,11 +171,14 @@ var kapost = {
     return passed;
   },
   validateAll: function validateAll() {
-    var passed = true;
+    var notPassed = [];
     this.selectors.form.find('select, input').each(function vld() {
-      passed = kapost.validateItem($(this));
+      var passed = kapost.validateItem($(this));
+      if (!passed) {
+        notPassed.push($(this));
+      }
     });
-    if (passed) {
+    if (notPassed.length === 0) {
       this.selectors.outputContainer.addClass('file-built');
       this.buildName();
     } else {
